@@ -1,0 +1,46 @@
+
+<header class="header">
+  <h1>Bienvenido al Sistema de Redes</h1>
+  <p>Explora, Conéctate, Aprende</p>
+</header>
+
+
+<nav class="navbar">
+  <div class="navbar-brand">Sistema de Redes</div>
+  <ul class="navbar-menu">
+    <li><a href="/inicio"><i class="fas fa-home"></i> Inicio</a></li>
+    <li>
+      <a href="/registros"><i class="fas fa-clipboard-list"></i> Registros</a>
+      <ul class="dropdown">
+        <li><a href="/registros">Registro de Usuarios</a></li>
+        <li><a href="/registrosgrupos">Registro de Grupos</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="/nuevosregistros"><i class="fas fa-plus-circle"></i> Nuevo Registro</a>
+      <ul class="dropdown">
+        <li><a href="/nuevousuario">Nuevo Usuario</a></li>
+        <li><a href="/nuevogrupos">Nuevo Grupo</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="/tablas"><i class="fas fa-table"></i> Tablas</a>
+      <ul class="dropdown">
+        <li><a href="/usuario">Usuarios</a></li>
+        <li><a href="/grupos">Grupos</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+<router-outlet></router-outlet>
+
+
+<footer class="footer">
+  <p>&copy; Todos los derechos reservados.</p>
+  <div class="footer-icons">
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+  </div>
+</footer>

@@ -1,0 +1,24 @@
+<h2>Editar Grupo</h2>
+<form (ngSubmit)="actualizarGrupo()" #grupoForm="ngForm">
+    <div class="form-group">
+        <label>ID Grupo:</label>
+        <input [(ngModel)]="grupo.id_grupo" name="id_grupo" placeholder="ID Grupo" required>
+    </div>
+
+    <div class="form-group">
+        <label>Nombre del Grupo:</label>
+        <input [(ngModel)]="grupo.nombre_grupo" name="nombre_grupo" placeholder="Nombre del Grupo" required>
+    </div>
+    
+    <div class="form-group">
+        <label>Descripción:</label>
+        <textarea [(ngModel)]="grupo.descripcion" name="descripcion" placeholder="Descripción" required></textarea>
+    </div>
+    
+    <div class="form-group">
+        <label>Fecha de Creación:</label>
+        <input type="date" [(ngModel)]="grupo.fecha_creacion" name="fecha_creacion" required>
+    </div>
+
+    <button type="submit">Actualizar Grupo</button>
+</form>

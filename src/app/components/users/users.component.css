@@ -1,0 +1,67 @@
+/* Estilo general del cuerpo */
+body {
+    background: linear-gradient(135deg, #8e44ad, #3498db); /* Degradado morado y azul */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Estilo de los párrafos */
+p {
+    text-align: center;
+    font-size: 26px;
+    color: #ffffff;
+    font-weight: bold;
+    background-color: #586470; /* Fondo oscuro con contraste */
+    padding: 12px 20px;
+    border-radius: 8px; /* Bordes redondeados */
+    margin: 25px 0;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilo de la tabla */
+table {
+    width: 85%;
+    margin: 40px auto;
+    border-collapse: collapse;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* Encabezado de la tabla */
+thead {
+    background-color: #8d9cab;
+    color: #ecf0f1;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+th, td {
+    padding: 20px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    color: #2c3e50; /* Texto oscuro para mejor visibilidad */
+}
+
+/* Estilo de las filas del cuerpo de la tabla */
+tbody tr:nth-child(even) {
+    background-color: rgba(236, 240, 241, 0.5); /* Color de fondo claro para las filas pares */
+}
+
+tbody tr:nth-child(odd) {
+    background-color: rgba(255, 255, 255, 0.7); /* Fondo claro para las filas impares */
+}
+
+/* Efecto de realce en la fila al pasar el ratón */
+tbody tr:hover {
+    background-color: rgba(52, 152, 219, 0.4); /* Color azul más vivo */
+    color: #2c3e50; /* Texto oscuro */
+    font-weight: bold; /* Letras resaltadas */
+    transition: background-color 0.3s ease, font-weight 0.3s ease;
+}

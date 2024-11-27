@@ -1,0 +1,94 @@
+        /* Estilo general */
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #f3f4f6, #e2e8f0);
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* Encabezado */
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 28px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        /* Tabla */
+        table {
+            width: 90%;
+            max-width: 1000px;
+            margin: 0 auto;
+            border-collapse: collapse;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            border-radius: 8px;
+            background-color: #ffffff;
+        }
+
+        /* Encabezado de tabla */
+        thead {
+            background-color: #4b6cb7;
+            color: white;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            font-size: 16px;
+        }
+
+        /* Filas del cuerpo de la tabla */
+        tbody tr {
+            transition: background-color 0.3s;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: rgba(240, 245, 250, 0.8);
+        }
+
+        tbody tr:hover {
+            background-color: rgba(220, 230, 240, 0.5);
+        }
+
+        /* Botones */
+        button.btn {
+            border: none;
+            border-radius: 5px;
+            padding: 8px 12px;
+            color: white;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            font-size: 14px;
+            margin-right: 5px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        button.btn.editar {
+            background-color: #4b6cb7;
+        }
+
+        button.btn.eliminar {
+            background-color: #e74c3c;
+        }
+
+        button.btn:hover {
+            transform: scale(1.05);
+        }
+
+        button.btn.editar:hover {
+            background-color: #51973a;
+        }
+
+        button.btn.eliminar:hover {
+            background-color: #9bc02b;
+        }
+
+        /* Icono de los botones */
+        button i {
+            margin-right: 5px;
+            font-size: 16px;
+        }

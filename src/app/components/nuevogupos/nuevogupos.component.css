@@ -1,0 +1,83 @@
+/* Reseteo de márgenes y paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo general */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #7d9ebe, #d9e2ec);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Asegúrate de que el body ocupe toda la altura */
+    color: #333;
+}
+
+/* Encabezado */
+h2 {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Formulario */
+form {
+    width: 100%;
+    max-width: 450px;
+    background: #ffffff;
+    padding: 25px 30px;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Etiquetas y grupos de entrada */
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+    background-color: #f1f5f8;
+}
+
+/* Estilo para el textarea */
+textarea {
+    resize: vertical; /* Permitir cambiar el tamaño verticalmente */
+}
+
+/* Botón de envío */
+button {
+    background-color: #4b6cb7;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    width: 100%;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #3a5a97;
+    transform: scale(1.05);
+}

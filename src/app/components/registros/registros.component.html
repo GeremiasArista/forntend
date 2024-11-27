@@ -1,0 +1,31 @@
+<h2>Lista de Usuarios</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Email</th>
+            <th>Direccion</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let usuario of usuarios">
+            <td>{{ usuario.id_usuario }}</td>
+            <td>{{ usuario.nombre }}</td>
+            <td>{{ usuario.apellido }}</td>
+            <td>{{ usuario.email }}</td>
+            <td>{{ usuario.direccion }}</td>
+            <td>
+                <button class="btn editar" (click)="editarUsuario(usuario.id_usuario)">
+                    <i class="fas fa-edit"></i> Editar
+                </button>
+                <button class="btn eliminar" (click)="eliminarUsuario(usuario.id_usuario)">
+                    <i class="fas fa-trash"></i> Eliminar
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>

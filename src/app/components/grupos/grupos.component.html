@@ -1,0 +1,19 @@
+<p>GRUPOS</p>
+<table border="1">
+    <thead>
+        <tr>
+            <th>ID Grupo</th>
+            <th>Nombre del Grupo</th>
+            <th>Descripción</th>
+            <th>Fecha de Creación</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let grupo of grupos">  <!-- Bucle para recorrer y mostrar cada grupo -->
+            <td>{{ grupo.id_grupo }}</td>
+            <td>{{ grupo.nombre_grupo }}</td>
+            <td>{{ grupo.descripcion }}</td>
+            <td>{{ grupo.fecha_creacion }}</td>
+        </tr>
+    </tbody>
+</table>

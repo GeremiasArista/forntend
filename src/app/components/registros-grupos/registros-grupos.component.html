@@ -1,0 +1,29 @@
+<h2>Lista de Grupos</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID Grupo</th>
+            <th>Nombre del Grupo</th>
+            <th>Descripción</th>
+            <th>Fecha de Creación</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let grupo of grupos">
+            <td>{{ grupo.id_grupo }}</td>
+            <td>{{ grupo.nombre_grupo }}</td>
+            <td>{{ grupo.descripcion }}</td>
+            <td>{{ grupo.fecha_creacion }}</td>
+            <td>
+                <button class="btn editar" (click)="editarGrupo(grupo.id_grupo)">
+                    <i class="fas fa-edit"></i> Editar
+                </button>
+                <button class="btn eliminar" (click)="eliminarGrupo(grupo.id_grupo)">
+                    <i class="fas fa-trash"></i> Eliminar
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
