@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class UsuarioService {
-  URL = 'https://backend-rzrw.onrender.com/api/usuarios/';
+  URL = 'http://localhost:3000/api/usuarios/';
 
   constructor(private http: HttpClient) { }
 
@@ -15,15 +15,14 @@ export class UsuarioService {
   }
 
   postUser(user: any): Observable<any> {
-    return this.http.post<any>(this.URL, user); // Especifica el tipo de retorno
+    return this.http.post<any>(this.URL, user);
   }
-
 
   updateUser(id_original: string, usuario: any) {
     return this.http.put(`${this.URL}${id_original}`, usuario);
   }
 
   deleteUser(id_usuario: string): Observable<any> {
-    return this.http.delete<any>(`${this.URL}${id_usuario}`); // Especifica el tipo de retorno
+    return this.http.delete<any>(`${this.URL}${id_usuario}`);
   }
 }

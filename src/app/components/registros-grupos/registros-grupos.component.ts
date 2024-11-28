@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class RegistrosGruposComponent implements OnInit {
   grupos: any[] = []; // Lista de grupos
+  message: string = ''; // Para manejar el mensaje en caso de error
 
   constructor(private gruposService: GruposService, private router: Router) { }
 
@@ -22,11 +23,16 @@ export class RegistrosGruposComponent implements OnInit {
 
   obtenerGrupos() {
     this.gruposService.fetchGrupos().subscribe(
-      (res: any[]) => {
-        this.grupos = res;
+      (res: any) => {
+        if (Array.isArray(res)) {
+          this.grupos = res; // Asigna los datos si la respuesta es un array
+        } else {
+          this.message = res.message || 'Error al obtener los grupos';
+        }
       },
       (err) => {
         console.error('Error al obtener grupos:', err);
+        this.message = 'No se pudieron obtener los grupos.';
       }
     );
   }

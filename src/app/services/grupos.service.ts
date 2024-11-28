@@ -1,17 +1,32 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
+import { catchError, map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GruposService {
-  URL = 'https://backend-rzrw.onrender.com/api/grupos/'; // URL base para grupos
+  URL = 'http://localhost:3000/api/grupos/'; // URL base para grupos
 
   constructor(private http: HttpClient) { }
 
   fetchGrupos(): Observable<any[]> {
-    return this.http.get<any[]>(this.URL);
+    return this.http.get<any>(this.URL).pipe(
+      map((response: any) => {
+        // Verificar que 'response.data' sea un array
+        if (Array.isArray(response.data)) {
+          return response.data;  // Si 'data' es un array, devolverlo
+        } else {
+          console.log(response.message);  // Si no es un array, mostrar el mensaje
+          return [];  // Devolver un array vacío
+        }
+      }),
+      catchError(error => {
+        console.error('Error al obtener los grupos:', error);
+        return of([]);  // En caso de error, devolver un array vacío
+      })
+    );
   }
 
   postGrupo(grupo: any): Observable<any> {

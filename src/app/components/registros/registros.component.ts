@@ -1,4 +1,3 @@
-// registros.component.ts
 import { Component, OnInit } from '@angular/core';
 import { UsuarioService } from '../../services/usuario.service';
 import { Router } from '@angular/router';
@@ -13,18 +12,22 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./registros.component.css']
 })
 export class RegistrosComponent implements OnInit {
-  usuarios: any[] = []; // Lista de usuarios
+  usuarios: any[] = []; 
 
-  constructor(private usuarioService: UsuarioService, private router: Router) { }
+  constructor(private usuarioService: UsuarioService, private router: Router) {}
 
   ngOnInit(): void {
-    this.obtenerUsuarios(); // Cargar usuarios al iniciar el componente
+    this.obtenerUsuarios(); 
   }
 
   obtenerUsuarios() {
     this.usuarioService.fetchUser().subscribe(
-      (res: any[]) => {
-        this.usuarios = res;
+      (res: any) => {
+        if (res.data) {
+          this.usuarios = res.data; 
+        } else {
+          console.warn('Respuesta sin datos:', res);
+        }
       },
       (err) => {
         console.error('Error al obtener usuarios:', err);
@@ -33,7 +36,7 @@ export class RegistrosComponent implements OnInit {
   }
 
   editarUsuario(id_usuario: string) {
-    this.router.navigate(['/editar-usuario', id_usuario]); // Redirige a la ruta con el id_usuario
+    this.router.navigate(['/editar-usuario', id_usuario]); 
   }
 
   eliminarUsuario(id_usuario: string) {
@@ -41,7 +44,7 @@ export class RegistrosComponent implements OnInit {
     this.usuarioService.deleteUser(id_usuario).subscribe(
       (res) => {
         console.log('Usuario eliminado:', res);
-        this.obtenerUsuarios(); // Actualiza la lista después de eliminar
+        this.obtenerUsuarios(); 
       },
       (err) => {
         console.error('Error al eliminar el usuario:', err);
