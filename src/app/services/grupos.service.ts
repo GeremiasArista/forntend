@@ -7,7 +7,7 @@ import { catchError, map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class GruposService {
-  URL = 'http://localhost:3000/api/grupos/'; // URL base para grupos
+  URL = 'https://backend-rzrw.onrender.com//api/grupos/'; // URL base para grupos
 
   constructor(private http: HttpClient) { }
 
